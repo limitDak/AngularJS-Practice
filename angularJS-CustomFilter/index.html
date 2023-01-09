@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="MsgApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Expression and Interpolation</title>
+  </head>
+  <body>
+    <h1>Expression and Interpolation</h1>
+    <div ng-controller="MsgController">
+      {{name}}'s original message is: <br />
+      {{sayMessage()}} <br /><br />
+      {{name}}'s new message is: <br />
+      {{sayLineMessage()}} <br /><br />
+      True Message: {{sayLineMessage() | truth : "wrote" : "coded" }} <br />
+      CAPS True Message: {{sayLineMessage() | truth : "wrote" : "coded" |
+      uppercase }}
+      <div>
+        <button ng-click="feedCat()">Feed Cat</button>
+        <br />
+        <img
+          ng-src="images/cat_{{stateOfBeing}}.jpg"
+          height="250px"
+          width="500px"
+        />
+      </div>
+    </div>
+  </body>
+</html>
