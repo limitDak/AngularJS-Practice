@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="BindingApp">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <script src="angular.min.js"></script>
+    <script src="app.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2-Way, 1-way, and 1-time binding</title>
+  </head>
+  <body>
+    <h1>2-Way, 1-way, and 1-time binding</h1>
+    <div ng-controller="BindingController">
+      <button ng-click="showNumberOfWatchers()">Log # of Watchers</button>
+      <button ng-click="setFullName()">Set Full Name</button><br />
+
+      <!--One-time watcher which will be removed once full name is initialized-->
+      Full name is: {{::fullName}} <br />
+
+      <button ng-click="logFirstName()">Log First Name</button><br />
+      <button ng-click="logFullName()">Log Full Name</button><br />
+
+      <div>
+        <input type="text" ng-model="firstName" />
+      </div>
+    </div>
+  </body>
+</html>
